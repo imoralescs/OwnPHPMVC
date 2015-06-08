@@ -1,0 +1,1 @@
+Hello, you are in the new controller <?=$data['name']?>!

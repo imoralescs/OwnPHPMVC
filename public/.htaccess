@@ -1,0 +1,14 @@
+# This do, anything after "public/ ", pass first from index.php.
+
+Options -MultiViews
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /example/php/mvc/public/
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
